@@ -20,3 +20,6 @@ residential_simulation_controls:
 
 simulation_output:
   include_enduse_subcategories: true
+
+reporting_measures:
+  - LoadComponentsReport

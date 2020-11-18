@@ -51,7 +51,7 @@ Location	AZ_Ernest.A.Love.Fld.723723	ResidentialLocation	weather_directory=../..
 Location	AZ_Kingman.723700	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AZ_Kingman.723700.epw																																											
 Location	AZ_Nogales.Intl.722728	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AZ_Nogales.Intl.722728.epw																																											
 Location	AZ_Page.Muni.Amos.723710	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AZ_Page.Muni.Amos.723710.epw																																											
-Location	AZ_Phoenix.Deer.Valley.722784	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AZ_Phoenix.Deer.Valley.722784.epw																																											
+Location	AZ_Phoenix.Deer.Valley.722784	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AL_Birmingham.Muni.AP.722280.epw																																											
 Location	AZ_Safford.Rgnl.722747	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AZ_Safford.Rgnl.722747.epw																																											
 Location	AZ_Window.Rock.722764	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AZ_Window.Rock.722764.epw																																											
 Location	AZ_Winslow.Aut.723740	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AZ_Winslow.Aut.723740.epw																																											
@@ -73,7 +73,7 @@ Location	CA_Fullerton.Municipal.722976	ResidentialLocation	weather_directory=../
 Location	CA_Imperial.Co.747185	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_CA_Imperial.Co.747185.epw																																											
 Location	CA_Jack.Mc.Namara.Fld.725946	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_CA_Jack.Mc.Namara.Fld.725946.epw																																											
 Location	CA_Lake.Tahoe.725847	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_CA_Lake.Tahoe.725847.epw																																											
-Location	CA_Lancaster.Fox.Field.723816	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_CA_Lancaster.Fox.Field.723816.epw																																											
+Location	CA_Lancaster.Fox.Field.723816	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AL_Birmingham.Muni.AP.722280.epw																																											
 Location	CA_Lemoore.Nas.747020	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_CA_Lemoore.Nas.747020.epw																																											
 Location	CA_Madera.Muni.745046	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_CA_Madera.Muni.745046.epw																																											
 Location	CA_Modesto.City.Co.Har.724926	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_CA_Modesto.City.Co.Har.724926.epw																																											
@@ -164,7 +164,7 @@ Location	FL_Whiting.Fld.Nas.Nort.722226	ResidentialLocation	weather_directory=..
 Location	GA_Albany.Municipal.722160	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_GA_Albany.Municipal.722160.epw																																											
 Location	GA_Alma.Bacon.Co.722135	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_GA_Alma.Bacon.Co.722135.epw																																											
 Location	GA_Athens.Municipal.723110	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_GA_Athens.Municipal.723110.epw																																											
-Location	GA_Atlanta.Municipal.722190	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_GA_Atlanta.Municipal.722190.epw																																											
+Location	GA_Atlanta.Municipal.722190	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AL_Birmingham.Muni.AP.722280.epw																																											
 Location	GA_Brunswick.Golden.Is.722136	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_GA_Brunswick.Golden.Is.722136.epw																																											
 Location	GA_Cartersville.722156	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_GA_Cartersville.722156.epw																																											
 Location	GA_Columbus.Metropolit.722255	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_GA_Columbus.Metropolit.722255.epw																																											
@@ -255,7 +255,7 @@ Location	IL_Lewis.University.725348	ResidentialLocation	weather_directory=../../
 Location	IL_Marseilles.Island.744600	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_IL_Marseilles.Island.744600.epw																																											
 Location	IL_Moline.Quad.City.725440	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_IL_Moline.Quad.City.725440.epw																																											
 Location	IL_Mount.Vernon.724335	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_IL_Mount.Vernon.724335.epw																																											
-Location	IL_Palwaukee.Muni.744665	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_IL_Palwaukee.Muni.744665.epw																																											
+Location	IL_Palwaukee.Muni.744665	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AL_Birmingham.Muni.AP.722280.epw																																											
 Location	IL_Quincy.Rgnl.Baldwin.724396	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_IL_Quincy.Rgnl.Baldwin.724396.epw																																											
 Location	IL_Salem.Leckrone.724330	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_IL_Salem.Leckrone.724330.epw																																											
 Location	IL_Southern.Illinois.724336	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_IL_Southern.Illinois.724336.epw																																											
@@ -786,7 +786,7 @@ Location	TX_Fort.Worth.Alliance.722594	ResidentialLocation	weather_directory=../
 Location	TX_Galveston.722420	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_TX_Galveston.722420.epw																																											
 Location	TX_Georgetown.Muni.722547	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_TX_Georgetown.Muni.722547.epw																																											
 Location	TX_Hondo.Muni.722533	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_TX_Hondo.Muni.722533.epw																																											
-Location	TX_Houston.Dw.Hooks.722429	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_TX_Houston.Dw.Hooks.722429.epw																																											
+Location	TX_Houston.Dw.Hooks.722429	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AL_Birmingham.Muni.AP.722280.epw																																											
 Location	TX_Huntsville.722447	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_TX_Huntsville.722447.epw																																											
 Location	TX_Hutchinson.Co.723635	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_TX_Hutchinson.Co.723635.epw																																											
 Location	TX_Kimble.Co.747400	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_TX_Kimble.Co.747400.epw																																											
@@ -887,7 +887,7 @@ Location	WA_Sanderson.Fld.727925	ResidentialLocation	weather_directory=../../../
 Location	WA_Tacoma.Narrows.727938	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_WA_Tacoma.Narrows.727938.epw																																											
 Location	WA_Tri.Cities.727845	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_WA_Tri.Cities.727845.epw																																											
 Location	WA_Walla.Walla.Rgnl.727846	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_WA_Walla.Walla.Rgnl.727846.epw																																											
-Location	WA_West.Point.Ls.994350	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_WA_West.Point.Ls.994350.epw																																											
+Location	WA_West.Point.Ls.994350	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_AL_Birmingham.Muni.AP.722280.epw																																											
 Location	WA_William.R.Fairchild.727885	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_WA_William.R.Fairchild.727885.epw																																											
 Location	WA_Yakima.Air.Terminal.727810	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_WA_Yakima.Air.Terminal.727810.epw																																											
 Location	WI_Baraboo.Wisc.Dells.726503	ResidentialLocation	weather_directory=../../../../weather	weather_file_name=USA_WI_Baraboo.Wisc.Dells.726503.epw																																											
@@ -1574,20 +1574,20 @@ HVAC Heating Type And Fuel	Electricity Other
 HVAC Heating Type And Fuel	Electricity Shared Heating																																														
 HVAC Heating Type And Fuel	Fuel Oil Fuel Boiler	ResidentialHVACBoiler	fuel_type=oil																																												
 HVAC Heating Type And Fuel	Fuel Oil Fuel Furnace	ResidentialHVACFurnace	fuel_type=oil																																												
-HVAC Heating Type And Fuel	Fuel Oil Fuel Wall/Floor Furnace	ResidentialHVACUnitHeater	fuel_type=oil
-HVAC Heating Type And Fuel	Fuel Oil Shared Heating																																												
+HVAC Heating Type And Fuel	Fuel Oil Fuel Wall/Floor Furnace	ResidentialHVACUnitHeater	fuel_type=oil																																												
+HVAC Heating Type And Fuel	Fuel Oil Shared Heating																																														
 HVAC Heating Type And Fuel	Natural Gas Fuel Boiler	ResidentialHVACBoiler	fuel_type=gas																																												
 HVAC Heating Type And Fuel	Natural Gas Fuel Furnace	ResidentialHVACFurnace	fuel_type=gas																																												
-HVAC Heating Type And Fuel	Natural Gas Fuel Wall/Floor Furnace	ResidentialHVACUnitHeater	fuel_type=gas	
-HVAC Heating Type And Fuel	Natural Gas Shared Heating																																											
+HVAC Heating Type And Fuel	Natural Gas Fuel Wall/Floor Furnace	ResidentialHVACUnitHeater	fuel_type=gas																																												
+HVAC Heating Type And Fuel	Natural Gas Shared Heating																																														
 HVAC Heating Type And Fuel	Other Fuel Fuel Boiler																																														
 HVAC Heating Type And Fuel	Other Fuel Fuel Furnace																																														
-HVAC Heating Type And Fuel	Other Fuel Fuel Wall/Floor Furnace									
-HVAC Heating Type And Fuel	Other Fuel Shared Heating																																					
+HVAC Heating Type And Fuel	Other Fuel Fuel Wall/Floor Furnace																																														
+HVAC Heating Type And Fuel	Other Fuel Shared Heating																																														
 HVAC Heating Type And Fuel	Propane Fuel Boiler	ResidentialHVACBoiler	fuel_type=propane																																												
 HVAC Heating Type And Fuel	Propane Fuel Furnace	ResidentialHVACFurnace	fuel_type=propane																																												
 HVAC Heating Type And Fuel	Propane Fuel Wall/Floor Furnace	ResidentialHVACUnitHeater	fuel_type=propane																																												
-HVAC Heating Type And Fuel	Propane Shared Heating
+HVAC Heating Type And Fuel	Propane Shared Heating																																														
 HVAC Heating Efficiency	None																																														
 HVAC Heating Efficiency	Other																																														
 HVAC Heating Efficiency	Void																																														
