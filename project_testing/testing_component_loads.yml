@@ -1,0 +1,22 @@
+schema_version: 0.2
+stock_type: residential
+buildstock_directory: ../../OpenStudio-BuildStock # Relative to this file or absolute
+project_directory: project_testing # Relative to buildstock_directory
+output_directory: outputs
+weather_files_url: https://data.nrel.gov/system/files/128/ResStock_TMY3.zip
+
+baseline:
+  n_datapoints: 1
+  n_buildings_represented: 80000000
+  sampling_algorithm: quota
+
+residential_simulation_controls:
+  timesteps_per_hr: 4
+  begin_month: 1
+  begin_day_of_month: 1
+  end_month: 12
+  end_day_of_month: 31
+  calendar_year: 2007
+
+simulation_output:
+  include_enduse_subcategories: true

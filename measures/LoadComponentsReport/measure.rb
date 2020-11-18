@@ -326,17 +326,6 @@ class LoadComponentsReport < OpenStudio::Measure::ReportingMeasure
     report_sim_output(runner, "total_energy_balance_gain_error", total_energy_balance_gain_error, "", "")
     report_sim_output(runner, "total_energy_balance_loss_error", total_energy_balance_loss_error, "", "")
 
-    if hs != 0
-      report_sim_output(runner, "heating_demand_error_percent", 100 * (hs - hd) / hs, "", "")
-    else
-      report_sim_output(runner, "heating_demand_error_percent", 0, "", "")
-    end
-    if cs != 0
-      report_sim_output(runner, "cooling_demand_error_percent", 100 * (cs - cd) / cs, "", "")
-    else
-      report_sim_output(runner, "cooling_demand_error_percent", 0, "", "")
-    end
-
     # close the sql file
     sqlFile.close
 
