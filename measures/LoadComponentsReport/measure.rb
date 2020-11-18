@@ -35,6 +35,7 @@ class LoadComponentsReport < OpenStudio::Measure::ReportingMeasure
   end # end the arguments method
 
   # return a vector of IdfObject's to request EnergyPlus objects needed by the run method
+
   def energyPlusOutputRequests(runner, user_arguments)
     super(runner, user_arguments)
 
@@ -48,17 +49,12 @@ class LoadComponentsReport < OpenStudio::Measure::ReportingMeasure
     end
     model = model.get
 
-    output_meters = OutputMeters.new(model, runner, "Timestep", include_enduse_subcategories = true)
-    results = output_meters.create_custom_building_unit_meters
+    results = OpenStudio::IdfObjectVector.new
 
     # heat transfer outputs
     OsLib_HeatTransfer.heat_transfer_outputs.each do |output|
       results << OpenStudio::IdfObject.load("Output:Variable,,#{output},Timestep;").get
     end
-
-    # supply outputs
-    results << OpenStudio::IdfObject.load("Output:Variable,,Zone Air System Sensible Heating Energy,RunPeriod;").get
-    results << OpenStudio::IdfObject.load("Output:Variable,,Zone Air System Sensible Cooling Energy,RunPeriod;").get
 
     return results
   end
@@ -87,31 +83,10 @@ class LoadComponentsReport < OpenStudio::Measure::ReportingMeasure
             "cooling_supply"]
   end
 
-  def load_outputs
-    loads = []
-    load_categories = ["lighting",
-                       "electricity_water_systems",
-                       "natural_gas_water_systems",
-                       "fuel_oil_water_systems",
-                       "propane_water_systems",
-                       "electricity_refrigerator",
-                       "electricity_clothes_washer",
-                       "electricity_clothes_dryer",
-                       "natural_gas_clothes_dryer",
-                       "propane_clothes_dryer",
-                       "electricity_dishwasher",
-                       "electricity_extra_refrigerator"]
-    load_categories.each do |load|
-      loads << "#{load}_energy"
-    end
-    return loads
-  end
-
   def outputs
     output_names = []
     output_names += demand_outputs
     output_names += supply_outputs
-    output_names += load_outputs
     output_names += ["internal_gains_gain_error"]
     output_names += ["internal_gains_loss_error"]
     output_names += ["outdoor_air_gains_gain_error"]
@@ -189,54 +164,7 @@ class LoadComponentsReport < OpenStudio::Measure::ReportingMeasure
     # LOAD ENERGY
     output_meters = OutputMeters.new(model, runner, "RunPeriod", include_enduse_subcategories = true)
 
-    electricity = output_meters.electricity(sqlFile, @ann_env_pd)
-    natural_gas = output_meters.natural_gas(sqlFile, @ann_env_pd)
-    fuel_oil = output_meters.fuel_oil(sqlFile, @ann_env_pd)
-    propane = output_meters.propane(sqlFile, @ann_env_pd)
-    wood = output_meters.wood(sqlFile, @ann_env_pd)
     supply_energy = output_meters.supply_energy(sqlFile, @ann_env_pd)
-
-    # Lighting
-    lighting_energy = electricity.interior_lighting[0] + electricity.exterior_lighting[0]
-    report_sim_output(runner, "lighting_energy", lighting_energy, elec_site_units, total_site_units)
-
-    # Water Systems
-    electricity_water_systems = electricity.water_systems[0]
-    report_sim_output(runner, "electricity_water_systems_energy", electricity_water_systems, elec_site_units, total_site_units)
-
-    natural_gas_water_systems = natural_gas.water_systems[0]
-    report_sim_output(runner, "natural_gas_water_systems_energy", natural_gas_water_systems, gas_site_units, total_site_units)
-
-    fuel_oil_water_systems = fuel_oil.water_systems[0]
-    report_sim_output(runner, "fuel_oil_water_systems_energy", fuel_oil_water_systems, other_fuel_site_units, total_site_units)
-
-    propane_water_systems = propane.water_systems[0]
-    report_sim_output(runner, "propane_water_systems_energy", propane_water_systems, other_fuel_site_units, total_site_units)
-
-    # Appliances
-    electricityRefrigerator = 0.0
-    electricityClothesWasher = 0.0
-    electricityClothesDryer = 0.0
-    naturalGasClothesDryer = 0.0
-    propaneClothesDryer = 0.0
-    electricityDishwasher = 0.0
-    electricityExtraRefrigerator = 0.0
-
-    electricityRefrigerator = electricity.refrigerator[0]
-    electricityClothesWasher = electricity.clothes_washer[0]
-    electricityClothesDryer = electricity.clothes_dryer[0]
-    naturalGasClothesDryer = natural_gas.clothes_dryer[0]
-    propaneClothesDryer = propane.clothes_dryer[0]
-    electricityDishwasher = electricity.dishwasher[0]
-    electricityExtraRefrigerator = electricity.extra_refrigerator[0]
-
-    report_sim_output(runner, "electricity_refrigerator_energy", electricityRefrigerator, "GJ", total_site_units)
-    report_sim_output(runner, "electricity_clothes_washer_energy", electricityClothesWasher, "GJ", total_site_units)
-    report_sim_output(runner, "electricity_clothes_dryer_energy", electricityClothesDryer, "GJ", total_site_units)
-    report_sim_output(runner, "natural_gas_clothes_dryer_energy", naturalGasClothesDryer, "GJ", total_site_units)
-    report_sim_output(runner, "propane_clothes_dryer_energy", propaneClothesDryer, "GJ", total_site_units)
-    report_sim_output(runner, "electricity_dishwasher_energy", electricityDishwasher, "GJ", total_site_units)
-    report_sim_output(runner, "electricity_extra_refrigerator_energy", electricityExtraRefrigerator, "GJ", total_site_units)
 
     units.each do |unit|
       unit_name = unit.name.to_s.upcase
