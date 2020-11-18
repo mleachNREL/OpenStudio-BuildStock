@@ -53,7 +53,7 @@ class LoadComponentsReport < OpenStudio::Measure::ReportingMeasure
 
     # heat transfer outputs
     OsLib_HeatTransfer.heat_transfer_outputs.each do |output|
-      results << OpenStudio::IdfObject.load("Output:Variable,,#{output},Timestep;").get
+      results << OpenStudio::IdfObject.load("Output:Variable,*,#{output},Timestep;").get
     end
 
     return results
@@ -78,15 +78,9 @@ class LoadComponentsReport < OpenStudio::Measure::ReportingMeasure
     return demands
   end
 
-  def supply_outputs
-    return ["heating_supply",
-            "cooling_supply"]
-  end
-
   def outputs
     output_names = []
     output_names += demand_outputs
-    output_names += supply_outputs
     output_names += ["internal_gains_gain_error"]
     output_names += ["internal_gains_loss_error"]
     output_names += ["outdoor_air_gains_gain_error"]
@@ -161,11 +155,6 @@ class LoadComponentsReport < OpenStudio::Measure::ReportingMeasure
       return false
     end
 
-    # LOAD ENERGY
-    output_meters = OutputMeters.new(model, runner, "RunPeriod", include_enduse_subcategories = true)
-
-    supply_energy = output_meters.supply_energy(sqlFile, @ann_env_pd)
-
     units.each do |unit|
       unit_name = unit.name.to_s.upcase
 
@@ -188,8 +177,6 @@ class LoadComponentsReport < OpenStudio::Measure::ReportingMeasure
     surface_convection_loss_error = 0.0
     total_energy_balance_gain_error = 0.0
     total_energy_balance_loss_error = 0.0
-    cooling_error = 0.0
-    heating_error = 0.0
 
     freq = 'Zone Timestep'
 
@@ -338,24 +325,6 @@ class LoadComponentsReport < OpenStudio::Measure::ReportingMeasure
     report_sim_output(runner, "surface_convection_loss_error", surface_convection_loss_error, "", "")
     report_sim_output(runner, "total_energy_balance_gain_error", total_energy_balance_gain_error, "", "")
     report_sim_output(runner, "total_energy_balance_loss_error", total_energy_balance_loss_error, "", "")
-
-    # SUPPLY ENERGY
-    heatingSupply = 0.0
-    coolingSupply = 0.0
-
-    heatingSupply = supply_energy.heating[0]
-    coolingSupply = supply_energy.cooling[0]
-
-    report_sim_output(runner, "heating_supply", heatingSupply, "GJ", total_site_units)
-    report_sim_output(runner, "cooling_supply", coolingSupply, "GJ", total_site_units)
-
-    # SUPPLY / DEMAND ERROR
-    hd = UnitConversions.convert(hd, "J", total_site_units)
-    cd = UnitConversions.convert(cd, "J", total_site_units)
-    hs = UnitConversions.convert(heatingSupply, "GJ", total_site_units)
-    cs = UnitConversions.convert(coolingSupply, "GJ", total_site_units)
-    report_sim_output(runner, "heating_demand_error", hs - hd, "", "")
-    report_sim_output(runner, "cooling_demand_error", cs - cd, "", "")
 
     if hs != 0
       report_sim_output(runner, "heating_demand_error_percent", 100 * (hs - hd) / hs, "", "")
